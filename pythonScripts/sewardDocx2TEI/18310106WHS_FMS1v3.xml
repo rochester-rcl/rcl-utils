@@ -1,0 +1,208 @@
+<!--Written by Luke Kortepeter June 2013-->
+<?xml-model href="http://seward.lib.rochester.edu/tei/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-stylesheet type="text/xsl" href="http://seward.lib.rochester.edu/sites/default/files/TEI-Boilerplate/content/teibp.xsl"?>
+<TEI xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title type="main">Seward Family Digital Archive</title>
+            <respStmt>
+               <resp ref="Transcriber"/>
+               <persName ref="spp:"/>
+               <!--Enter three-letter transcriber ID here "ref="spp:zzz"--></respStmt>
+            <respStmt>
+               <resp ref="Student Editor"/>
+               <persName ref="spp:"/>
+               <!--Enter three-letter student editor ID here "ref="spp:zzz"--></respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <distributor>Seward Family Digital Archive</distributor>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>University of Rochester</institution>
+                  <repository>Rare Books and Special Collections</repository>
+                  <collection/>
+                  <!--Include Collection Name: "Seward Family Papers," "William H. Seward Public Papers," "Grier Papers," "Chesebro Papers," "Miller Papers"--><idno/>
+                  <!--Include File Drawer or Box Number, Digital File???--><msName/>
+                  <!-- Include ... --></msIdentifier>
+               <physDesc>
+                  <additions>
+                     <figure n="1"><!--Add page number of letter here--><graphic url="http://seward.lib.rochester.edu/tei/web_letters/titleofLetter/titleOfLetter.jpg"/>
+                        <!--Add url to jpeg file of scanned letter--></figure>
+                     <figure n="2"><!--Add page number of letter here--><graphic url="http://seward.lib.rochester.edu/tei/web_letters/titleofLetter/titleOfLetter.jpg"/>
+                        <!--Add url to jpeg file of scanned letter--></figure>
+                     <figure n="3"><!--Add page number of letter here--><graphic url="http://seward.lib.rochester.edu/tei/web_letters/titleofLetter/titleOfLetter.jpg"/>
+                        <!--Add url to jpeg file of scanned letter--></figure>
+                     <figure n="4"><!--Add page number of letter here--><graphic url="http://seward.lib.rochester.edu/tei/web_letters/titleofLetter/titleOfLetter.jpg"/>
+                        <!--Add url to jpeg file of scanned letter--></figure>
+                     <!--Add any additional pages here--></additions>
+               </physDesc>
+               <history>
+                  <origin>
+                     <date when="1830-01-01"/>
+                     <!-- Include date in yyyy-mm-dd w/ certainty att. if not 100% --></origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <listPrefixDef>
+            <prefixDef ident="psn" matchPattern="([a-z]+)" replacementPattern="http://seward.lib.rochester.edu/tei/persons.xml#$1">
+               <p> In the context of this project, private URIs with the prefix
+                                "psn" point to <gi>person</gi> elements in the project's
+                                personography.xml file.
+                            </p>
+            </prefixDef>
+         </listPrefixDef>
+         <tagsDecl>
+            <rendition xml:id="superscript" n="teibp:superscript" scheme="css"> verical-align:
+                            super; font-size: 12px; </rendition>
+            <rendition xml:id="underline" n="teibp:underline" scheme="css"> text-decoration:
+                            underline; </rendition>
+            <rendition xml:id="strikethrough" n="teibp:strikethrough" scheme="css"> text-decoration:
+                            line-through; </rendition>
+            <rendition xml:id="red" n="teibp:red" scheme="css"> color: red; </rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <creation>
+            <address>
+               <persName xml:id="blah1"/>
+               <!-- Include valid person name of sender: "xml:id=SEWf_828"--><placeName xml:id="blah2"/>
+               <!--Include valid place name: "xml:id=ALB_1318" or "unknown" for either.--></address>
+            <address>
+               <persName xml:id="blah3"/>
+               <!-- Include valid person name of sender: "xml:id=SEWw_829"--><placeName xml:id="blah4"/>
+               <!-- Include valid place name: "xml:id=AUB_1319" or "unknown" for either.--></address>
+         </creation>
+         <langUsage>
+            <language ident="en"/>
+         </langUsage>
+      </profileDesc>
+      <revisionDesc>
+         <listChange>
+            <change type="Transcription" when="2014-01-01" who="spp:"/>
+            <!-- Include valid change type: "Transcription," "Revision," or "Publication" with "when=" and valid date" --><change type="Revision" when="2014-01-01" who="spp:"/>
+            <change type="Publication" when="2014-01-01" who="spp:"/>
+         </listChange>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div><!-- Begin Transcription --><p>
+            
+            [WHS, Albany, to FMS, Auburn, 6 January 1831]<lb/>
+               <pb n="1"/>
+               <lb/>
+            11.<lb/>
+            [Conclusion of 18310105WHS_FMS1.]<lb/>
+            Thursday afternoon<lb/>
+            Jan’y 6<hi rendition="superscript">th</hi> 
+               <lb/>
+            Another days labor is ended _ and I am to<lb/>
+            write a few lines to you as the closing<lb/>
+            instead of the opening business of the day.<lb/>
+            No measure of importance, no debate of interest<lb/>
+            has as yet occurred in the Legislature.<lb/>
+            I rise in the morning with the idea that<lb/>
+            I have nothing to do and that I shall have<lb/>
+            a tedious day of indolence. I watch with <lb/>
+            impatience the strikings of the clock till 11 <lb/>
+            go to the house am occupied at most two &amp; a <lb/>
+            half hours come home dine and after that<lb/>
+            hour no man is allowed to be busy as ^for^ instance<lb/>
+            after ^dinner at 2 o’clock^ I came up into my room wrote the two<lb/>
+            first lines on this page was interrupted by a <lb/>
+            call and continued receiving calls and dismissing<lb/>
+            visitors until about sunset when I abandoned<lb/>
+            all hope of writing one more line till every body<lb/>
+               <pb n="2"/>
+               <lb/>
+            12.<lb/>
+            should have gone to bed so in despair I<lb/>
+            sallied forth went with Mr Fuller<hi rendition="endnote_reference">
+                  
+                      Philo Case Fuller (17870814–18550816). 
+                  
+               </hi> of the<lb/>
+            Senate &amp; called on Mr S. M. Hopkins<hi rendition="endnote_reference">
+                  
+                      Samuel Miles Hopkins (17720509–18370309). 
+                  
+               </hi> spent<lb/>
+            half an hour with him came down to<lb/>
+            Manchesters<hi rendition="endnote_reference">
+                  
+                      Elias Manchester (17580815–18460314). Could not find definitive birth and death dates. 
+                     
+                  
+               </hi>, took ten with him smoked<lb/>
+            and drank a glass of wine with him &amp;<lb/>
+            his fellow boarders, called at Crittendens<hi rendition="endnote_reference">
+                  
+                      Crittenden’s identity unknown. A Crittenden is mentioned on pg. 235 of Seward’s Autobiography; later, on pg. 521, Seward says that John J. Crittenden (1786–1863) became United States Attorney-General in 1841. It is unclear whether the Crittenden mentioned earlier in the biography and in this letter, living in Albany in the 1830s, is the same Crittenden as the Attorney-General – I could find no evidence that John Crittenden was in Albany in 1831. 
+                  
+               </hi>
+               <lb/>
+            spent an hour with Mr Spencer<hi rendition="endnote_reference">
+                  
+                      John Canfield Spencer (17880108–18550517).
+                  
+               </hi> in arrang-<lb/>
+            ing our causes for argument in the Supreme<lb/>
+            Court came down street and was so fortunate<lb/>
+            as to leave my card for Mr O<hi rendition="endnote_reference">
+                  
+                      “Mr O” identity unknown. Assemblymen in the 54th Session of the New York Assembly whose last names began with “O”: Gideon Ostrander, Thomas Ottley, Oran G. Otis. 
+                  
+               </hi> of the Assembly<lb/>
+            at the American. Went across just to bid<lb/>
+            good evening to Mr<hi rendition="endnote_reference">
+                  
+                      AHT.
+                  
+               </hi> &amp; Mrs Tracy<hi rendition="endnote_reference">
+                  
+                      Harriet Foote Tracy, née Norton (18000309–187603).
+                  
+               </hi> _ dropped into<lb/>
+            Mr Ellis<hi rendition="endnote_reference">
+                  
+                      John Ellis (17710522–18460410). 
+                  
+               </hi> room looked in upon Maynard<hi rendition="endnote_reference">
+                  
+                      William Hale Maynard (17861123–18320828). 
+                  
+               </hi> _<lb/>
+            came home ate supper and find myself in<lb/>
+            my room at 1/2 past 11 o’clock. Now how<lb/>
+            any man finds time to study and make<lb/>
+            speeches is beyond my comprehension.<lb/>
+            	I want to look into the Salt laws and the<lb/>
+            Canal laws _and two or three other matters<lb/>
+            besides doing up some old business but in<lb/>
+            truth two letters from Seth Hunt<hi rendition="endnote_reference">
+                  
+                      Seth Hunt – more data unknown.
+                  
+               </hi> lay on my<lb/>
+            table reproaching my negligence.<lb/>
+               <pb n="3"/>
+               <lb/>
+            13.<lb/>
+            Tracy &amp; Maynard say I must make up my [mind]<lb/>
+            never more to be worth a cent for practice<lb/>
+            in the law Doleful prediction for a poor<lb/>
+            man. Adieu. Heaven protect you all.<lb/>
+            [18310107WHS_FMS1 begins on the next line.]<lb/>
+            [dg]<lb/>
+            *<hi rendition="color(222222)">handNote - WSJ or JWS copy.</hi>
+               <lb/>
+            </p>
+         </div>
+      </body>
+   </text>
+</TEI>
