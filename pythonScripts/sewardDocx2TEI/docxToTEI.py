@@ -22,13 +22,13 @@ def saxonCheck():
     if (args['saxon'] != None):
         saxonDir = args['saxon']
         return saxonDir
-    
-    elif (os.path.exists('/Applications/Oxygen/oxygen/lib/saxon9ee.jar')):
+
+    elif (os.path.exists('/Applications/oxygen/lib/saxon9ee.jar')):
         print 'Found Saxon'
-        saxonDir = '/Applications/Oxygen/oxygen/lib/saxon9ee.jar'
+        saxonDir = '/Applications/oxygen/lib/saxon9ee.jar'
 
         return saxonDir
-    
+
     else :
         sys.exit("Unable to Detect Saxon Automatically. Please specify Saxon path with '-sax' or '--saxon'")
 
@@ -37,26 +37,26 @@ def outputCheck():
     if (args['output'] != None):
 
         outputDir = args['output']
-        print 'Finished Files Will be Saved to ' + outputDir
-        
+        print 'Finished Files Will be Saved to {}'.format(outputDir)
+
         return outputDir
-    
+
     else:
 
         outputDir = args['directory']
-        print 'Finished Files Will be Saved to ' + outputDir
-        return outputDir
+        print 'Finished Files Will be Saved to {}'.format(outputDir)
+        return "{}/".format(outputDir)
 #End of global functions
-    
+
 class docTransform: #Class for handling all transformation related methods
-    
+
     def __init__(self, directory):
-        
-        self.directory = directory 
+
+        self.directory = directory
 
 
     def createTempDir(self):
-        tempDirectoryName = self.directory + "temp/"
+        tempDirectoryName = "{}/temp/".format(self.directory)
         if not os.path.exists(tempDirectoryName):
             os.makedirs(tempDirectoryName)
         else :
@@ -70,38 +70,38 @@ class docTransform: #Class for handling all transformation related methods
                 filePath = os.path.abspath(os.path.join(dirname, filename))
                 if '.docx' not in filePath:
                     os.remove(filePath)
-    
+
 
 
     def unzipFiles(self, tempDirectoryName, saxonDir):
         for dirname, dirnames, filenames in os.walk(self.directory):
             for filename in filenames:
                 if '.docx' in filename:
-                    print "Extracting to " + tempDirectoryName
+                    print "Extracting to{}".format(tempDirectoryName)
                     filePath = os.path.abspath(os.path.join(dirname, filename))
                     with zipfile.ZipFile(filePath, "r") as zf:
 
                         outputSplit = filePath.split('.')
 
                         outputName = outputSplit[0] + '.xml'
-                    
+
                         zf.extractall(tempDirectoryName)
-                    
-                        docFile = tempDirectoryName + "word/document.xml"
-                    
-                        cwd = os.path.dirname(__file__)
-                    
-                        xsltPath = cwd + "/from/docxtotei.xsl"
 
-                        docFile = '-s:' + docFile
+                        docFile = "{}word/document.xml".format(tempDirectoryName)
 
-                        xsltPath = '-xsl:' + xsltPath
+                        cwd = os.path.dirname(os.path.realpath(__file__))
 
-                        outputName = '-o:' + outputName
+                        xsltPath = "{}/from/docxtotei.xsl".format(cwd)
+
+                        docFile = '-s:{}'.format(docFile)
+
+                        xsltPath = '-xsl:{}'.format(xsltPath)
+
+                        outputName = '-o:{}'.format(outputName)
 
                         xslCommand = ['java','-jar',saxonDir,docFile,xsltPath,outputName]
 
-                        print "Running Initial Transformation" 
+                        print "Running Initial Transformation"
 
                         subprocess.call(xslCommand)
 
@@ -115,37 +115,37 @@ class docTransform: #Class for handling all transformation related methods
         for dirname, dirnames, filenames in os.walk(self.directory):
             for filename in filenames:
                 if '.xml' in filename:
-                    
+
                     filePath = os.path.abspath(os.path.join(dirname, filename))
 
-                    cwd = os.path.dirname(__file__)
+                    cwd = os.path.dirname(os.path.realpath(__file__))
 
-                    xsltPath = cwd + "/from/word_tei_cleanNewHeader.xsl"
+                    xsltPath = "{}/from/teiNewHeader8_25.xsl".format(cwd)
 
-                    inFile = '-s:' + filePath
+                    inFile = '-s:{}'.format(filePath)
 
-                    xsltPath = '-xsl:' + xsltPath
+                    xsltPath = '-xsl:{}'.format(xsltPath)
 
-                    outputName = '-o:' + filePath
+                    outputName = '-o:{}'.format(filePath)
 
                     xslCommand = ['java','-jar',saxonDir,inFile,xsltPath,outputName]
 
-                    print "Applying Some More Transformations" 
+                    print "Applying Some More Transformations"
 
                     subprocess.call(xslCommand)
-                    
+
     def pageBreaks(self, outputDir):
         for dirname, dirnames, filenames in os.walk(self.directory):
             for filename in filenames:
                 if '.xml' in filename:
-                    
+
                     filePath = os.path.abspath(os.path.join(dirname, filename))
 
                     output = os.path.abspath(os.path.join(outputDir, filename))
 
-                    cwd = os.path.dirname(__file__)
+                    cwd = os.path.dirname(os.path.realpath(__file__))
 
-                    xsltPath = cwd + "/from/pageBreaks.xsl"
+                    xsltPath = "{}/from/pageBreaks.xsl".format(cwd)
 
                     xmlFile = ET.parse(filePath)
 
@@ -156,43 +156,37 @@ class docTransform: #Class for handling all transformation related methods
                     pageBreaks = transform(xmlFile)
 
                     if (output != filePath):
-                        
+
                        pageBreaks.write(output, pretty_print=True, encoding="utf-8")
 
-                       
+
                     else:
-                        
-                       pageBreaks.write(filePath, pretty_print=True, encoding="utf-8") 
-                    
+
+                       pageBreaks.write(filePath, pretty_print=True, encoding="utf-8")
+
 #End of class docTransform
 
 #################################### The Main Program ###############################
-                       
-saxon = saxonCheck()
 
-outputDir = outputCheck()
+if __name__ == "__main__":
 
-#Do the setup steps first ^
+    saxon = saxonCheck()
 
-                    
-myDoc = docTransform(directory)                
+    outputDir = outputCheck()
 
-tempDir = myDoc.createTempDir()
-
-myDoc.unzipFiles(tempDir, saxon)
-
-myDoc.transformFiles(saxon)
-
-myDoc.pageBreaks(outputDir)
-
-myDoc.cleanTempDir(directory)
-
-#Done 
+    #Do the setup steps first ^
 
 
-                    
-                    
+    myDoc = docTransform(directory)
 
+    tempDir = myDoc.createTempDir()
 
+    myDoc.unzipFiles(tempDir, saxon)
 
+    myDoc.transformFiles(saxon)
 
+    myDoc.pageBreaks(outputDir)
+
+    myDoc.cleanTempDir(directory)
+
+    #Done
