@@ -4,30 +4,39 @@
     xmlns="http://www.tei-c.org/ns/1.0">
     
     <xsl:output indent="yes" method="xml" omit-xml-declaration="no"/>
+    <xsl:variable name="newline">
+        <xsl:text>&#10;</xsl:text>
+    </xsl:variable>
     
-    <xsl:template match="/">
-        <xsl:processing-instruction name="xml-model">
-            <xsl:text> href="http://seward.lib.rochester.edu/ns/seward.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:text>
+    <xsl:template match="/">        
+            <xsl:processing-instruction name="xml-model">
+            <xsl:text> href="http://humanities.lib.rochester.edu/ns/seward.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:text>
         </xsl:processing-instruction>
-        <xsl:processing-instruction name="xml-model">
-            <xsl:text> href="http://seward.lib.rochester.edu/ns/seward.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"</xsl:text>
+            <xsl:value-of select="$newline"/>
+            <xsl:processing-instruction name="xml-model">
+            <xsl:text> href="http://humanities.lib.rochester.edu/ns/seward.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"</xsl:text>
         </xsl:processing-instruction>
-        <xsl:processing-instruction name="xml-model">
-            <xsl:text> href="http://seward.lib.rochester.edu/ns/seward.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"</xsl:text>
+            <xsl:value-of select="$newline"/>
+            <xsl:processing-instruction name="xml-model">
+            <xsl:text> href="http://humanities.lib.rochester.edu/ns/seward.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"</xsl:text>
         </xsl:processing-instruction>
-        <TEI xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.tei-c.org/ns/1.0"
-            xml:id="l_18440209lmw_ahs1v3">
+            <xsl:value-of select="$newline"/>
+            <xsl:comment>FALL ACTIVITY SPREADSHEET: https://goo.gl/fIdxtI</xsl:comment>
+            <xsl:value-of select="$newline"/>
+            <xsl:apply-templates/>
+        
+        <TEI xmlns="http://www.tei-c.org/ns/1.0">
             <teiHeader>
                 <fileDesc>
                     <titleStmt>
-                        <title>Letter Title Here</title>
+                        <title>Seward Family Digital Archive</title>
                         <respStmt>
                             <resp>transcriber</resp>
-                            <persName ref="spp:anb"/>
+                            <persName ref="spp"/>
                         </respStmt>
                         <respStmt>
                             <resp>student editor</resp>
-                            <persName ref="spp:sss"/>
+                            <persName ref="spp"/>
                         </respStmt>
                     </titleStmt>
                     <publicationStmt>
@@ -44,7 +53,7 @@
                             </physDesc>
                             <history>
                                 <origin>
-                                    <date when="1844-02-09"/>
+                                    <date when="1801-01-01"/>
                                 </origin>
                             </history>
                         </msDesc>
@@ -86,29 +95,29 @@
                     </langUsage>
                     <correspDesc>
                         <correspAction type="sent">
-                            <persName ref="psn:WORl_1068"/>
-                            <placeName ref="pla:CAN_1332"/>
-                            <date type="creation" when="1844-02-09"/>
+                            <persName ref="psn"/>
+                            <placeName ref="pla"/>
+                            <date type="creation" when="1801-01-01"/>
                         </correspAction>
                         <correspAction type="received">
-                            <persName ref="psn:SEWa_815"/>
-                            <placeName ref="pla:POI_1454"/>
+                            <persName ref="psn"/>
+                            <placeName ref="pla"/>
                         </correspAction>
                     </correspDesc>
                 </profileDesc>
                 <revisionDesc>
                     <listChange>
-                        <change type="transcription" who="spp:anb"/>
-                        <change type="revision" when="2015-06-16" who="spp:ekk"/>
+                        <change type="transcription" who="spp"/>
+                        <change type="revision" when="2015-06-16" who="spp"/>
                     </listChange>
                 </revisionDesc>
             </teiHeader>
             <text>
                 <body>
                     <div><xsl:comment> Begin Transcription </xsl:comment> 
-                        <p>
+                        <ab>
                             <xsl:apply-templates select="//text/body/div"/>
-                        </p>
+                        </ab>
                     </div>
                 </body>
             </text>
@@ -130,17 +139,20 @@
     
     <xsl:template match="text/body/div/p/hi">
         <hi>
-            <xsl:attribute name="rendition">
-                <xsl:value-of select="@rend"/>
-            </xsl:attribute>
             <xsl:apply-templates/>
         </hi>
     </xsl:template>
+    
     <xsl:template match="text/body/div/p/note">
         <note>
             <xsl:apply-templates/>
         </note>
     </xsl:template>
-    
+   
+    <xsl:template match="@xml:id">
+        <xsl:if test="parent::TEI">
+            <xsl:attribute name="xml:id"><xsl:value-of select="replace(tokenize(base-uri(), '/')[last()], '.xml','')"/></xsl:attribute>
+        </xsl:if>
+    </xsl:template>
    
 </xsl:transform>
