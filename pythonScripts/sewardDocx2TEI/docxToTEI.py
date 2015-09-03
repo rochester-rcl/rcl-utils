@@ -143,6 +143,10 @@ class docTransform: #Class for handling all transformation related methods
 
                     output = os.path.abspath(os.path.join(outputDir, filename))
 
+                    outputl = "l_{}".format(output)
+
+                    filePathl = "l{}".format(filePath)
+
                     cwd = os.path.dirname(os.path.realpath(__file__))
 
                     xsltPath = "{}/from/pageBreaks.xsl".format(cwd)
@@ -157,12 +161,12 @@ class docTransform: #Class for handling all transformation related methods
 
                     if (output != filePath):
 
-                       pageBreaks.write(output, pretty_print=True, encoding="utf-8")
+                       pageBreaks.write(outputl, pretty_print=True, encoding="utf-8")
 
 
                     else:
 
-                       pageBreaks.write(filePath, pretty_print=True, encoding="utf-8")
+                       pageBreaks.write(filePathl, pretty_print=True, encoding="utf-8")
 
 #End of class docTransform
 
