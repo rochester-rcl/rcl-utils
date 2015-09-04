@@ -23,9 +23,9 @@
             <xsl:value-of select="$newline"/>
             <xsl:comment>FALL ACTIVITY SPREADSHEET: https://goo.gl/fIdxtI</xsl:comment>
             <xsl:value-of select="$newline"/>
-            <xsl:apply-templates/>
         
         <TEI xmlns="http://www.tei-c.org/ns/1.0">
+            <xsl:attribute name="xml:id" select="replace(tokenize(base-uri(), '/')[last()], '.xml','')"/>
             <teiHeader>
                 <fileDesc>
                     <titleStmt>
@@ -148,11 +148,5 @@
             <xsl:apply-templates/>
         </note>
     </xsl:template>
-   
-    <xsl:template match="@xml:id">
-        <xsl:if test="parent::TEI">
-            <xsl:attribute name="xml:id"><xsl:value-of select="replace(tokenize(base-uri(), '/')[last()], '.xml','')"/></xsl:attribute>
-        </xsl:if>
-    </xsl:template>
-   
+    
 </xsl:transform>
