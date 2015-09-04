@@ -108,6 +108,19 @@ class docTransform: #Class for handling all transformation related methods
                         print "Cleaning up Temp Directories"
 
                         self.cleanTempDir(tempDirectoryName)
+    def appendL(self):
+        for dirname, dirnames, filenames in os.walk(self.directory):
+            for filename in filenames:
+                if '.xml' in filename:
+
+                    filePath = os.path.abspath(os.path.join(dirname, filename))
+
+                    filePathl = "{}/l_{}".format(dirname,filename) #prepend 'l_' to filename
+
+                    print filePathl
+
+                    os.rename(filePath, filePathl)
+
 
     def transformFiles(self, saxonDir):
 
@@ -143,13 +156,11 @@ class docTransform: #Class for handling all transformation related methods
 
                     output = os.path.abspath(os.path.join(outputDir, filename))
 
-                    outputl = "l_{}".format(output)
-
-                    filePathl = "l{}".format(filePath)
-
                     cwd = os.path.dirname(os.path.realpath(__file__))
 
                     xsltPath = "{}/from/pageBreaks.xsl".format(cwd)
+
+                    print xsltPath
 
                     xmlFile = ET.parse(filePath)
 
@@ -161,12 +172,12 @@ class docTransform: #Class for handling all transformation related methods
 
                     if (output != filePath):
 
-                       pageBreaks.write(outputl, pretty_print=True, encoding="utf-8")
+                       pageBreaks.write(output, pretty_print=True, encoding="utf-8")
 
 
                     else:
 
-                       pageBreaks.write(filePathl, pretty_print=True, encoding="utf-8")
+                       pageBreaks.write(filePath, pretty_print=True, encoding="utf-8")
 
 #End of class docTransform
 
@@ -186,6 +197,8 @@ if __name__ == "__main__":
     tempDir = myDoc.createTempDir()
 
     myDoc.unzipFiles(tempDir, saxon)
+
+    myDoc.appendL();
 
     myDoc.transformFiles(saxon)
 
