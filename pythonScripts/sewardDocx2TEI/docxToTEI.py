@@ -108,7 +108,7 @@ class docTransform: #Class for handling all transformation related methods
                         print "Cleaning up Temp Directories"
 
                         self.cleanTempDir(tempDirectoryName)
-    def appendL(self):
+    def prependL(self):
         for dirname, dirnames, filenames in os.walk(self.directory):
             for filename in filenames:
                 if '.xml' in filename:
@@ -198,7 +198,7 @@ if __name__ == "__main__":
 
     myDoc.unzipFiles(tempDir, saxon)
 
-    myDoc.appendL();
+    myDoc.prependL();
 
     myDoc.transformFiles(saxon)
 

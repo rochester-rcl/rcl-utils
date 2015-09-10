@@ -1,0 +1,330 @@
+<?xml-model href="http://humanities.lib.rochester.edu/ns/seward.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://humanities.lib.rochester.edu/ns/seward.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="http://humanities.lib.rochester.edu/ns/seward.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<!--FALL ACTIVITY SPREADSHEET: https://goo.gl/fIdxtI-->
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="l_18310116FMS_WHS1v3">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Seward Family Digital Archive</title>
+            <respStmt>
+               <resp>transcriber</resp>
+               <persName ref="spp"/>
+            </respStmt>
+            <respStmt>
+               <resp>student editor</resp>
+               <persName ref="spp"/>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <distributor>Seward Family Papers Project</distributor>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <institution>University of Rochester</institution>
+                  <repository>Rare Books and Special Collections</repository>
+               </msIdentifier>
+               <physDesc>
+                  <objectDesc form="letter"/>
+               </physDesc>
+               <history>
+                  <origin>
+                     <date when="1801-01-01"/>
+                  </origin>
+               </history>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <listPrefixDef>
+            <prefixDef ident="psn" matchPattern="([a-z]+)" replacementPattern="http://seward.lib.rochester.edu/tei/persons.xml#$1">
+               <p> In the context of this project, private URIs with the prefix "psn" point to
+                                <gi>person</gi> elements in the project's persons.xml authority file. </p>
+            </prefixDef>
+            <prefixDef ident="pla" matchPattern="([a-z]+)" replacementPattern="http://seward.lib.rochester.edu/tei/places.xml#$1">
+               <p> In the context of this project, private URIs with the prefix "pla" point to
+                                <gi>place</gi> elements in the project's places.xml authority file. </p>
+            </prefixDef>
+            <prefixDef ident="spp" matchPattern="([a-z]+)" replacementPattern="http://seward.lib.rochester.edu/tei/staff.xml#$1">
+               <p> In the context of this project, private URIs with the prefix "psn" point to
+                                <gi>person</gi> elements in the project's staff.xml authority file. </p>
+            </prefixDef>
+            <prefixDef ident="bib" matchPattern="([a-z]+)" replacementPattern="http://seward.lib.rochester.edu/tei/bibl.xml#$1">
+               <p> In the context of this project, private URIs with the prefix "psn" point to
+                                <gi>person</gi> elements in the project's bibl.xml authority file. </p>
+            </prefixDef>
+         </listPrefixDef>
+         <tagsDecl>
+            <rendition n="teibp:superscript" scheme="css"> verical-align: super; font-size: 12px; </rendition>
+            <rendition n="teibp:underline" scheme="css"> text-decoration: underline; </rendition>
+            <rendition n="teibp:strikethrough" scheme="css"> text-decoration: line-through; </rendition>
+            <rendition n="teibp:red" scheme="css"> color: red; </rendition>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <langUsage>
+            <language ident="en"/>
+         </langUsage>
+         <correspDesc>
+            <correspAction type="sent">
+               <persName ref="psn"/>
+               <placeName ref="pla"/>
+               <date type="creation" when="1801-01-01"/>
+            </correspAction>
+            <correspAction type="received">
+               <persName ref="psn"/>
+               <placeName ref="pla"/>
+            </correspAction>
+         </correspDesc>
+      </profileDesc>
+      <revisionDesc>
+         <listChange>
+            <change type="transcription" who="spp"/>
+            <change type="revision" when="2015-06-16" who="spp"/>
+         </listChange>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div><!-- Begin Transcription --><ab>
+            
+            [FMS, Auburn, to WHS, Albany, NY, 16 January 1831]<lb/>
+               <pb/>
+               <lb/>
+            Auburn Sunday evening 16<lb/>
+            My Dear Henry, your Thursday’s letter came this morning, it <lb/>
+            seems to me my letters are forever getting to you, you have not<lb/>
+            received my second yet. I have the vapours most wretchedly. The <lb/>
+            destroying angel still continues to visit the dwellings of our neigh-<lb/>
+            bours, and why shall we escape? Ambrose Cock<hi>
+                  
+                      Cock, Ambrose. (17790813-18500214). 
+                  
+               </hi> lost another child<hi>
+                  
+                      Cock, Solomon Veil. (1830-1831). 
+                  
+               </hi>
+               <lb/>
+            on Friday with the scarlet fever, the youngest, about nine months <lb/>
+            old. Daniels<hi>
+                  
+                      Cock, Daniel Frost. (18061111-18501028).
+                  
+               </hi> babe<hi>
+                  
+                      Cock, Charles Henry. (18291217-18310117). 
+                  
+               </hi> was alive the last we heard but supposed to be <lb/>
+            dying. Mrs. Gunn<hi>
+                  
+                      Gunn, Mrs.
+                  
+               </hi> was buried on Friday the day after her<lb/>
+            disease, what a barbarous custom this is of hurrying people under<lb/>
+            ground the moment they have ceased to breathe. Catharine 	<lb/>
+            M<hi>c</hi>Donald<hi>
+                  
+                      McDonald, Catherine.
+                  
+               </hi> spent the day with us yesterday, is still here, nothing<lb/>
+            occurred by way of excitement except the chimney’s getting on <lb/>
+            fire in the afternoon the remainder of the day Grandma<hi>
+                  
+                      PTM.
+                  
+               </hi> and<lb/>
+            Peter<hi>
+                  
+                      Peter.
+                  
+               </hi> spent in examining the roof of the house to see that it had <lb/>
+            not taken fire. Augustus<hi>
+                  
+                      AHS.
+                  
+               </hi> too was very useful in that way, last <lb/>
+            night it had snowed sufficient to make tolerable sleighing, so unpleasant <lb/>
+            to day no one ventured out to Church. Teusday morning. I <lb/>
+            had written so far sunday night when, while putting the children <lb/>
+            in bed I hit my elbow against the bed post, I never had any<lb/>
+            thing so trifling occasion so much pain. I think it must have<lb/>
+            struck a nerve the chords became contracted and the veins very<lb/>
+            much swollen instantly, it continued to pain me until<lb/>
+            I went to bed, my wrist was so weak I could not write <lb/>
+            any more that evening. I still feel the weakness when I write<lb/>
+            but do not apprehend any other ill effects from the blow. Catherine<lb/>
+            McDonald is still with us. She is a singular being but with all her<lb/>
+            oddities has much good sense and quickness of apprehension. She is older than myself and can reccollect the rise and <lb/>
+               <pb/>
+               <lb/>
+            progress of the <hi>junto family</hi> as Mrs. G. B. Throop<hi>
+                  
+                      Throop, Frances Hunt. (1806-1872). 
+                  
+                  
+                      Throop, George Bliss. (17930412-18540223). 
+                  
+               </hi> very sapiently<lb/>
+            designates them. She has related to me many very amusing <lb/>
+            anecdotes about them. I have wandered strangely since I commenced <lb/>
+            this letter you must not imagine yours was less interesting to me<lb/>
+            because I have said so little about it. I had the hypo when I <lb/>
+            commenced writing Sunday evening and felt rather disposed to <lb/>
+            quarrel with the post masters because I could not enjoy your <lb/>
+            simpathy sooner. The sunshine of monday morning morning displaced<lb/>
+            some of these feelings, but my apprehensions about the scarlet fever<lb/>
+            still continue. Daniel Cock and his wife<hi>
+                  
+                      Cock, Jane Merritt. (18100427-18840326). 
+                  
+               </hi> have just gone to bury<lb/>
+            their babe it died yesterday morning. Dr. Pitney<hi>
+                  
+                      Pitney, Dr. Joseph T. (1787-18530420)
+                  
+               </hi> who like Augustus <lb/>
+            thinks one remedy may be effectively applied to all diseases in-<lb/>
+            creased the pain of the little sufferer by making an incision<lb/>
+            in its throat, because he chanced to be successful when he operated<lb/>
+            upon Mr Mills<hi>
+                  
+                      Mills. 
+                  
+               </hi> little girl<hi>
+                  
+                      Mills. 
+                  
+               </hi>, who had the croup. He did the same <lb/>
+            to  Dr Vaneps<hi>
+                  
+                      Vaneps, Dr. 
+                  
+               </hi> child<hi>
+                  
+                      Vaneps.
+                  
+               </hi> it died and Vaneps now thinks had he <lb/>
+            followed his own judgement the child might have been living.<lb/>
+            I would give the world there was one phisician in whom I <hi>had</hi> 
+               <lb/>
+            might have half the confidence I had in poor Dr. Tuttle<hi>
+                  
+                      Tuttle, Dr. Erastus Darwin. (17911216-18290622). 
+                  
+               </hi>. But <lb/>
+            the best phisician cannot always cure. After all the lives of our <lb/>
+            babes are in the hands of Him who gave them, of Him who sees<lb/>
+            
+               <hi>not</hi> as man sees. It gratifies me to know that you think you<lb/>
+            would be more happy were I with you but it cannot be. It would<lb/>
+            be almost cruel to take my little ones away from a home where they<lb/>
+            are so comfortable and happy this cold cold winter. I am <lb/>
+            too foolish a mother to leave them, so it cannot be. I think<lb/>
+            you will feel less lonely when you become more accustomed to your <lb/>
+            new mode of spending your time. Thurlow Weed<hi>
+                  
+                      TxW.
+                  
+               </hi> I like because <lb/>
+            he likes you. Andrews<hi>
+                  
+                      Andrews, Samuel George. (17961016-18630611). 
+                  
+               </hi> I do not like neither do I like his wife<hi>
+                  
+                      Andrews, Ann Floyd. ( -18390414). 
+                  
+               </hi>
+               <lb/>
+            you could discover no point in her character because there is <lb/>
+            none, none that is amiable. When she was 14 years old her<lb/>
+               <pb/>
+               <lb/>
+            most predominant traits were selfishness and vanity. Maynard<hi>
+                  
+                      Maynard, William Hale. (17861123-18320828).
+                  
+               </hi>
+               <lb/>
+            could not win a womans heart. But Tracy<hi>
+                  
+                      AHT. 
+                  
+               </hi>, with his “genius” <lb/>
+            his “acquirements,” his “eloquence” and “honorable principles” his fascinating<lb/>
+            address and his <hi>ambition</hi> has he a heart. You appear to<lb/>
+            have forgotten this in the calender of his virtues. Perhaps a<lb/>
+            brilliant imagination occupies the place of one. Mrs Tracy<hi>
+                  
+                      Tracy, Harriet Foote Norton. (1800-post1870). 
+                  
+               </hi> 
+               <lb/>
+            as you draw her I should esteem but where there is a lady<lb/>
+            in the case I had rather trust my own judgement.<lb/>
+            Dont think me cynical, you know I <hi>can</hi> and <hi>do</hi> love, <lb/>
+            too much for my own happiness some times. The stove does make<lb/>
+            the big room very warm. Gus has had no rides with his Grandpa<hi>
+                  
+                      ExM.
+                  
+               </hi>
+               <lb/>
+            yet, but promises in profusion. Grandma says Fred<hi>
+                  
+                      FWS.
+                  
+               </hi> has <hi>grown</hi>
+               <lb/>
+            to be very nice since he came here to live, but he will never <lb/>
+            equal Augustus, with Grandma and Clary<hi>
+                  
+                      CMM.
+                  
+               </hi>, dear tired he sits<lb/>
+            alone and plays on the carpet and looks very meek and nice in<lb/>
+            his mother’s eyes [ripped] Augustus is devising all manner of ways to<lb/>
+            keep him from Mr Tracy. I cannot persuade him that he will not be<lb/>
+            taken perforce. I can tell you to which of the classes of members you do<lb/>
+            
+               <hi>not</hi> belong. Not to John C. Spencers<hi>
+                  
+                      Spencers, John C. (17880108-18550517).
+                  
+               </hi>, not to Enos’<hi>
+                  
+                      Throop, Enos Thompson. (08211784-11011874).
+                  
+               </hi> I am quite sure. Not<lb/>
+            to those who dress, dine, make calls and motions prettily nor to the<lb/>
+            mulititude of cyphers I am very positive. If you do not belong to the <lb/>
+            other class which is the only one that finds any favour in my eyes<lb/>
+            I think you must be a distinct species. It snows again to <lb/>
+            day and continues yet, our thermometer has varied very <lb/>
+            little during the last week. Saw no one yesterday but Beardsley<hi>
+                  
+                      Possibly Beardsley, Nelson. (18080530-18940115).
+                  
+               </hi>
+               <lb/>
+            who came for the little tin trunk, did not appear much inclined<lb/>
+            to talk, as a specimen of my carefulness, when he went away I looked<lb/>
+            for the key but Peter who was standing by said he saw Beardsley put<lb/>
+            it in his pocket. I gave up the <hi>seach</hi> search very composedly. This<lb/>
+            morning the key was found on the carpet, woe unto me if Pa<lb/>
+            had discovered it first. Tomorrow I shall expect the Sunday letter. Your own <lb/>
+            Frances<lb/>
+               <pb/>
+               <lb/>
+            William H. Seward<lb/>
+            Albany. <lb/>
+            Auburn NY JAN 20<lb/>
+            Frances A. Seward 21 Jan. 1831<lb/>
+            [alc]<lb/>
+            </ab>
+         </div>
+      </body>
+   </text>
+</TEI>
