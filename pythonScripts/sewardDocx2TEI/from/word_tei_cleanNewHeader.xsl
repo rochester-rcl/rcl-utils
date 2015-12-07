@@ -3,6 +3,10 @@
     xpath-default-namespace="http://www.tei-c.org/ns/1.0"
     xmlns="http://www.tei-c.org/ns/1.0">
     
+    <!-- DEPRECATED: This template file was replaced by teiNewHeader8_25.xsl
+         Joe Easterly, December 2015
+    -->
+    
     <xsl:output indent="yes" method="xml"/>
     
     <xsl:template match="/">
@@ -137,9 +141,9 @@
     
     <xsl:template match="text/body/div/p/hi">
         <hi>
-            <xsl:attribute name="rendition">
-                <xsl:value-of select="@rend"/>
-            </xsl:attribute>
+            <!--<xsl:attribute name="rend">
+                <xsl:value-of select="@rendition"/>
+            </xsl:attribute>-->
             <xsl:apply-templates/>
         </hi>
     </xsl:template>

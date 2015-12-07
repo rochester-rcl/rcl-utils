@@ -25,7 +25,7 @@
             <xsl:value-of select="$newline"/>
         
         <TEI xmlns="http://www.tei-c.org/ns/1.0">
-            <xsl:attribute name="xml:id" select="replace(tokenize(base-uri(), '/')[last()], '.xml','')"/>
+            <xsl:attribute name="xml:id" select="lower-case(replace(tokenize(base-uri(), '/')[last()], '.xml',''))"/>
             <teiHeader>
                 <fileDesc>
                     <titleStmt>
@@ -40,7 +40,7 @@
                         </respStmt>
                     </titleStmt>
                     <publicationStmt>
-                        <distributor>Seward Family Papers Project</distributor>
+                        <distributor>Seward Family Digital Archive</distributor>
                     </publicationStmt>
                     <sourceDesc>
                         <msDesc>
@@ -112,6 +112,9 @@
                     </listChange>
                 </revisionDesc>
             </teiHeader>
+            <facsimile>
+                <graphic url="image.jpg"/>
+            </facsimile>
             <text>
                 <body>
                     <div><xsl:comment> Begin Transcription </xsl:comment> 
@@ -137,8 +140,9 @@
 
     </xsl:template>
     
-    <xsl:template match="text/body/div/p/hi">
+    <xsl:template match="hi">
         <hi>
+            <xsl:attribute name="rend" select="@rend"/>
             <xsl:apply-templates/>
         </hi>
     </xsl:template>
